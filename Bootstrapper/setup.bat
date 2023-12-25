@@ -19,22 +19,31 @@ FOR /L %%i IN (0,1,1) DO (
         FOR /F "tokens=1,2 delims==" %%a IN ("!dotfiles[%%i]!") DO (
             IF EXIST "%%a" (
                 IF NOT EXIST "%%b" (
-                    ECHO Copying file to repository: %%a -> %%b
-                    COPY "%%a" "%%b"
-                )
-                ECHO Creating symlink: %%a -> %%b
-                MKLINK "%%a" "%%b"
-                IF ERRORLEVEL 1 (
-                    ECHO Failed to create symlink for %%a
+                    ECHO Backing up file: %%a -> %%a.bak
+                    COPY "%%a" "%%a.bak"
+                    ECHO Creating symlink: %%a -> %%b
+                    DEL "%%a"
+                    MKLINK "%%a" "%%b"
+                    IF ERRORLEVEL 1 (
+                        ECHO Failed to create symlink for %%a
+                    ) ELSE (
+                        ECHO Symlink created for %%a -> %%b
+                        ECHO Restoring file from backup: %%a.bak -> %%b
+                        COPY "%%a.bak" "%%b"
+                        DEL "%%a.bak"
+                    )
                 ) ELSE (
-                    ECHO Symlink created for %%a -> %%b
+                    ECHO Deleting original file and creating symlink: %%a -> %%b
+                    DEL "%%a"
+                    MKLINK "%%a" "%%b"
+                    IF ERRORLEVEL 1 (
+                        ECHO Failed to create symlink for %%a
+                    ) ELSE (
+                        ECHO Symlink created for %%a -> %%b
+                    )
                 )
             ) ELSE (
-                IF EXIST "%%b" (
-                    ECHO Error: File exists in repository but not in the original location: %%b
-                ) ELSE (
-                    ECHO File does not exist in both locations: %%a and %%b
-                )
+                ECHO Error: File does not exist in the original location: %%a
             )
         )
     ) ELSE (
