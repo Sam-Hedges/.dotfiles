@@ -3,7 +3,8 @@
 This repository contains my personal configuration files (dotfiles) for various tools and applications. Cloning and setting up these dotfiles on a new machine allows for a quick and consistent environment setup.
 
 Inspired by [ThePrimeagen](https://www.youtube.com/@ThePrimeagen)'s setup stream
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GXxvxSlzJdI?si=aHfXyDQFmxmSo0l8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[![ThePrimeagen Stream](https://img.youtube.com/vi/GXxvxSlzJdI?si=aHfXyDQFmxmSo0l8/0.jpg)](https://www.youtube.com/watch?v=GXxvxSlzJdI?si=aHfXyDQFmxmSo0l8)
 
 # Cloning the Repository
 
