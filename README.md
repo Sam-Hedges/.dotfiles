@@ -4,7 +4,7 @@ This repository contains my personal configuration files (dotfiles) for various 
 
 Inspired by [ThePrimeagen](https://www.youtube.com/@ThePrimeagen)'s setup stream
 
-[![ThePrimeagen Stream](https://img.youtube.com/vi/GXxvxSlzJdI?si=aHfXyDQFmxmSo0l8/0.jpg)](https://www.youtube.com/watch?v=GXxvxSlzJdI?si=aHfXyDQFmxmSo0l8)
+[![ThePrimeagen Stream](https://img.youtube.com/vi/GXxvxSlzJdI?si/0.jpg)](https://www.youtube.com/watch?v=GXxvxSlzJdI?si)
 
 # Cloning the Repository
 
