@@ -14,13 +14,9 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq  
   
-" Sets the code numbers to relative"
 set relativenumber  
-set numbers  
-  
-"Show the vim mode"  
+set number 
 set showmode  
-" set <leader> to <space>
 let mapleader = " "
   
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins  
@@ -35,17 +31,49 @@ set quickscope
 Plug 'preservim/nerdtree'
 set NERDTree
 map <leader>pf :NERDTree<CR>
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t  
-"" Map \r to the Reformat Code action  
-"map \r <Action>(ReformatCode)  
-  
-"" Map <leader>d to start debug  
-"map <leader>d <Action>(Debug)  
   
 "" Map \b to toggle the breakpoint on the current line  
-"map \b <Action>(ToggleLineBreakpoint)  
-  
+"map \b <Action>(ToggleLineBreakpoint)
+
 " Find usages in file is Ctrl + F7. " Alt + E, then F, then U (through the menu bar) also seems to work fine.
 map <Leader>f <Action>(FindUsages)  
 map <Leader>F <Action>(HighlightUsagesInFile)
+
+map <Leader>d <Action>(QuickJavaDoc)  
+map <Leader>g <Action>(GotoDeclaration)  
+
+" I like using space for jumping to the next error or issue
+map <Space> <Action>(GotoNextError)
+" Kind of makes more sense to use Backspace to go back... but could it be assigned a better action?
+map <BS> <Action>(GotoPreviousError)
+
+" remember to assing to Vim the following shortcuts!
+" C-h
+" C-l
+" C-o
+" C-i
+" C-v
+" C-w Vim uses it to switch windows, the IDE behaviour is mapped to C-k instead
+" C-k
+" C-m Enter alternative
+" C-[ A great Esc key alternative! In the ide, moves caret to code block start.
+" C-] Go to definition. In the ide, moves caret to code block end.
+
+" consider NOT assigning to Vim the following shortcuts:
+" C-e recent files popup window is very useful
+" C-b find occurrences in file popup
+" C-u go to super method
+" C-q info popup
+" C-j We already have j in Vim, better use it for Insert Live Template
+" C-n class search
+
+" unsure about assigning to Vim or to IDE
+" C-f find or move forward?
+" C-r replace or redo?
+" C-y
+" C-c We already have C-[, don't we?
+" C-p kind of not very used withou C-n
+" C-s doesn't seem very useful in Vim
+" C-t update project in IDEA, something something tag stack in Vim
+" C-a I don't use it that much in Vim
+" C-x same as above
