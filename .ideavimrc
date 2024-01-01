@@ -24,6 +24,7 @@ Plug 'machakann/vim-highlightedyank'
 
 " Commentary plugin
 Plug 'tpope/vim-commentary'  
+set commentary
 
 " Quickscope plugin
 set quickscope
@@ -39,6 +40,8 @@ map <space> <nop>
 
 " leader q map to close current tab
 map <leader>q :tabclose<cr>
+
+" map c-
 
 " maps alt j and alt k to move selected lines up and down
 vmap <a-j> :m '>+1<cr>gv=gv
