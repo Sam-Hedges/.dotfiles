@@ -16,64 +16,47 @@ map Q gq
   
 set relativenumber  
 set number 
-set showmode  
-let mapleader = " "
-  
+set showmode   
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins  
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'  
+
 " Commentary plugin
 Plug 'tpope/vim-commentary'  
+
 " Quickscope plugin
 set quickscope
 
 " Nerdtree plugin
 Plug 'preservim/nerdtree'
-set NERDTree
-map <leader>pf :NERDTree<CR>
+set nerdtree
+
+" --- Custom mappings ---
+" set the leader key to space
+let mapleader = " "
+map <space> <nop>
+
+" leader q map to close current tab
+map <leader>q :tabclose<cr>
+
+" maps alt j and alt k to move selected lines up and down
+vmap <a-j> :m '>+1<cr>gv=gv
+vmap <a-k> :m '<-2<cr>gv=gv
+ 
+" map leader f to find usages and leader h to highlight usages in file
+map <leader>f <action>(findusages)  
+map <leader>f <action>(highlightusagesinfile)
+
+" map leader d to quick documentation and leader g to go to declaration
+map <leader>d <action>(quickjavadoc)  
+map <leader>g <action>(gotodeclaration)  
+
+" map leader leader to gotonexterror and leader bs to gotopreviouserror
+map <leader><leader> <action>(gotonexterror)
+map <leader><bs> <action>(gotopreviouserror)
+
+map <leader>pf :nerdtree<cr>
   
-"" Map \b to toggle the breakpoint on the current line  
-"map \b <Action>(ToggleLineBreakpoint)
-
-" Find usages in file is Ctrl + F7. " Alt + E, then F, then U (through the menu bar) also seems to work fine.
-map <Leader>f <Action>(FindUsages)  
-map <Leader>F <Action>(HighlightUsagesInFile)
-
-map <Leader>d <Action>(QuickJavaDoc)  
-map <Leader>g <Action>(GotoDeclaration)  
-
-" I like using space for jumping to the next error or issue
-map <Space> <Action>(GotoNextError)
-" Kind of makes more sense to use Backspace to go back... but could it be assigned a better action?
-map <BS> <Action>(GotoPreviousError)
-
-" remember to assing to Vim the following shortcuts!
-" C-h
-" C-l
-" C-o
-" C-i
-" C-v
-" C-w Vim uses it to switch windows, the IDE behaviour is mapped to C-k instead
-" C-k
-" C-m Enter alternative
-" C-[ A great Esc key alternative! In the ide, moves caret to code block start.
-" C-] Go to definition. In the ide, moves caret to code block end.
-
-" consider NOT assigning to Vim the following shortcuts:
-" C-e recent files popup window is very useful
-" C-b find occurrences in file popup
-" C-u go to super method
-" C-q info popup
-" C-j We already have j in Vim, better use it for Insert Live Template
-" C-n class search
-
-" unsure about assigning to Vim or to IDE
-" C-f find or move forward?
-" C-r replace or redo?
-" C-y
-" C-c We already have C-[, don't we?
-" C-p kind of not very used withou C-n
-" C-s doesn't seem very useful in Vim
-" C-t update project in IDEA, something something tag stack in Vim
-" C-a I don't use it that much in Vim
-" C-x same as above
+"" map \b to toggle the breakpoint on the current line  
+"map \b <action>(togglelinebreakpoint)
