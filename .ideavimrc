@@ -36,30 +36,51 @@ set NERDTree
 " --- Custom mappings ---
 " set the leader key to space
 let mapleader = " "
-map <space> <nop>
+map <Space> <nop>
 
 " leader q map to close current tab
-map <leader>q :tabclose<cr>
+map <Leader>q :tabclose<cr>
 
-" map c-
+" map c-arrow keys to move tabs place in groups or into new groups in the corresponding direction
+map <C-/> :action MoveTabRight<CR>
+map <C-m> :action Unsplit<CR>
+
+" map c-, and c-. to switch between tabs
+map <C-,> :tabprevious<cr>
+map <C-.> :tabnext<cr>
+
+" map leader , and leader . to switch between panes
+map <Leader>, <C-w>h
+map <Leader>. <C-w>l
+
+" map leader m and leader / to move tabs left and right within a group
+map <Leader>m :tabmove -1<cr>
+map <Leader>/ :tabmove +1<cr>
+
+" map leader w to save all
+map <Leader>w :wa<cr>
 
 " maps alt j and alt k to move selected lines up and down
 vmap <a-j> :m '>+1<cr>gv=gv
 vmap <a-k> :m '<-2<cr>gv=gv
  
 " map leader f to find usages and leader h to highlight usages in file
-map <leader>f <action>(findusages)  
-map <leader>F <action>(highlightusagesinfile)
-
-" map leader d to quick documentation and leader g to go to declaration
-map <leader>d <action>(QuickJavaDoc)  
-map <leader>g <action>(GotoDeclaration)
+map <Leader>f <Action>(findusages)  
+map <Leader>F <Action>(highlightusagesinfile)
 
 " map leader leader to gotonexterror and leader bs to gotopreviouserror
-map <leader><leader> <action>(GotoNextError)
-map <leader><bs> <action>(GotoPreviousError)
+map <Leader>e <Action>(GotoNextError)
+map <Leader><BS>e <Action>(GotoPreviousError)
 
-map <leader>pf :NERDTree<CR>
+" map leader d to quick documentation and leader g to go to declaration
+map <Leader>d <Action>(QuickJavaDoc)  
+map <Leader>g <Action>(GotoDeclaration)
+
+" map leader pf to open the project file tree
+map <Leader>pf :NERDTree<CR>
+
+" map leader pv to open the project switcher
+map <Leader>pv <Action>(Switcher)
   
 "" map \b to toggle the breakpoint on the current line  
-"map \b <action>(togglelinebreakpoint)set ideajoin
+"map \b <Action>(togglelinebreakpoint)set ideajoin
