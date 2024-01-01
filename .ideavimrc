@@ -31,7 +31,7 @@ set quickscope
 
 " Nerdtree plugin
 Plug 'preservim/nerdtree'
-set nerdtree
+set NERDTree
 
 " --- Custom mappings ---
 " set the leader key to space
@@ -49,17 +49,17 @@ vmap <a-k> :m '<-2<cr>gv=gv
  
 " map leader f to find usages and leader h to highlight usages in file
 map <leader>f <action>(findusages)  
-map <leader>f <action>(highlightusagesinfile)
+map <leader>F <action>(highlightusagesinfile)
 
 " map leader d to quick documentation and leader g to go to declaration
-map <leader>d <action>(quickjavadoc)  
-map <leader>g <action>(gotodeclaration)  
+map <leader>d <action>(QuickJavaDoc)  
+map <leader>g <action>(GotoDeclaration)
 
 " map leader leader to gotonexterror and leader bs to gotopreviouserror
-map <leader><leader> <action>(gotonexterror)
-map <leader><bs> <action>(gotopreviouserror)
+map <leader><leader> <action>(GotoNextError)
+map <leader><bs> <action>(GotoPreviousError)
 
-map <leader>pf :nerdtree<cr>
+map <leader>pf :NERDTree<CR>
   
 "" map \b to toggle the breakpoint on the current line  
-"map \b <action>(togglelinebreakpoint)
+"map \b <action>(togglelinebreakpoint)set ideajoin
