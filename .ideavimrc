@@ -81,6 +81,10 @@ map <Leader>pf :NERDTree<CR>
 
 " map leader pv to open the project switcher
 map <Leader>pv <Action>(Switcher)
-  
+
+" map zC and zO to collapse and expand regions recursively
+nnoremap zC :action CollapseRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR>
+
 "" map \b to toggle the breakpoint on the current line  
 "map \b <Action>(togglelinebreakpoint)set ideajoin
