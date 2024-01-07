@@ -39,26 +39,26 @@ let mapleader = " "
 map <Space> <nop>
 
 " leader q map to close current tab
-map <Leader>q :tabclose<cr>
+map <Leader>x :tabclose<cr>
 
 " map c-arrow keys to move tabs place in groups or into new groups in the corresponding direction
 map <C-/> :action MoveTabRight<CR>
 map <C-m> :action Unsplit<CR>
 
 " map c-, and c-. to switch between tabs
-map <C-,> :tabprevious<cr>
-map <C-.> :tabnext<cr>
+map <S-Tab> :tabprevious<cr>
+map <Tab> :tabnext<cr>
 
 " map leader , and leader . to switch between panes
 map <Leader>, <C-w>h
-map <Leader>. <C-w>l
+nmap <Leader>. <C-w>l
 
 " map leader m and leader / to move tabs left and right within a group
-map <Leader>m :tabmove -1<cr>
-map <Leader>/ :tabmove +1<cr>
+nmap <C-m> :tabmove -1<cr>
+nmap <C-/> :tabmove +1<cr>
 
 " map leader w to save all
-map <Leader>w :wa<cr>
+nmap <C-s> :wa<cr>
 
 " maps alt j and alt k to move selected lines up and down
 vmap <a-j> :m '>+1<cr>gv=gv
@@ -69,15 +69,15 @@ map <Leader>f <Action>(findusages)
 map <Leader>F <Action>(highlightusagesinfile)
 
 " map leader leader to gotonexterror and leader bs to gotopreviouserror
-map <Leader>e <Action>(GotoNextError)
-map <Leader><BS>e <Action>(GotoPreviousError)
+map <Leader>c <Action>(GotoNextError)
+map <Leader><BS>c <Action>(GotoPreviousError)
 
 " map leader d to quick documentation and leader g to go to declaration
 map <Leader>d <Action>(QuickJavaDoc)  
 map <Leader>g <Action>(GotoDeclaration)
 
 " map leader pf to open the project file tree
-map <Leader>pf :NERDTree<CR>
+map <Leader>e :NERDTree<CR>
 
 " map leader pv to open the project switcher
 map <Leader>pv <Action>(Switcher)
