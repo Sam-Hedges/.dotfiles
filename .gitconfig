@@ -8,3 +8,5 @@
 	email = sam.hedges.sh@gmail.com
 [core]
 	editor = \"C:\\Users\\samhe\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[safe]
+	directory = C:/Users/samhe/AppData/Local/nvim

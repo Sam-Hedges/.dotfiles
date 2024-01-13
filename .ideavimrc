@@ -73,8 +73,8 @@ map <Leader>c <Action>(GotoNextError)
 map <Leader><BS>c <Action>(GotoPreviousError)
 
 " map leader d to quick documentation and leader g to go to declaration
-map <Leader>d <Action>(QuickJavaDoc)  
-map <Leader>g <Action>(GotoDeclaration)
+nmap <S-K> <Action>(QuickJavaDoc)  
+map <Leader>gd <Action>(GotoDeclaration)
 
 " map leader pf to open the project file tree
 map <Leader>e :NERDTree<CR>
