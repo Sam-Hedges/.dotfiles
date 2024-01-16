@@ -38,7 +38,10 @@ set NERDTree
 let mapleader = " "
 map <Space> <nop>
 
-" leader q map to close current tab
+" map leader fm to format the current file
+map <Leader>fm :action ReformatCode<CR>
+
+" leader x map to close current tab
 map <Leader>x :tabclose<cr>
 
 " map c-arrow keys to move tabs place in groups or into new groups in the corresponding direction
@@ -82,9 +85,9 @@ map <Leader>e :NERDTree<CR>
 " map leader pv to open the project switcher
 map <Leader>pv <Action>(Switcher)
 
-" map zC and zO to collapse and expand regions recursively
+" map leader zC and leader zO to collapse and expand regions recursively
 nnoremap zC :action CollapseRegionRecursively<CR>
-nnoremap zO :action ExpandRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR> 
 
 "" map \b to toggle the breakpoint on the current line  
 "map \b <Action>(togglelinebreakpoint)set ideajoin
