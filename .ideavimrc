@@ -52,9 +52,9 @@ map <C-m> :action Unsplit<CR>
 map <S-Tab> :tabprevious<cr>
 map <Tab> :tabnext<cr>
 
-" map leader , and leader . to switch between panes
-map <Leader>, <C-w>h
-nmap <Leader>. <C-w>l
+" map ctrl l and h to move left and right between splits
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
 
 " map leader m and leader / to move tabs left and right within a group
 nmap <C-m> :tabmove -1<cr>
