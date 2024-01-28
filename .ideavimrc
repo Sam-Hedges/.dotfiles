@@ -68,12 +68,12 @@ vmap <a-j> :m '>+1<cr>gv=gv
 vmap <a-k> :m '<-2<cr>gv=gv
  
 " map leader f to find usages and leader h to highlight usages in file
-map <Leader>f <Action>(findusages)  
-map <Leader>F <Action>(highlightusagesinfile)
+map <Leader>f <Action>(FindUsages)  
+map <Leader>F <Action>(HighlightUsagesInFile)
 
 " map leader leader to gotonexterror and leader bs to gotopreviouserror
 map <Leader>c <Action>(GotoNextError)
-map <Leader><BS>c <Action>(GotoPreviousError)
+map <Leader>C <Action>(GotoPreviousError)
 
 " map leader d to quick documentation and leader g to go to declaration
 nmap <S-K> <Action>(QuickJavaDoc)  
